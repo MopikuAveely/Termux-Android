@@ -231,7 +231,7 @@ fi
 EOF
 
 # Setup storage.
-if [ ! -f ~/storage ]; then
+if [ ! -d ~/storage ]; then
   echo
   echo -e "\e[0;33mTHIS IS OPTIONAL.\e[0m"
   echo -e "\e[0;32mIf you want to link your device storage, please give the app permission to access your file.\e[0m"
@@ -246,7 +246,6 @@ if [ ! -f ~/storage ]; then
       echo
       echo "Skipped"
     fi
-  fi
 fi
 
 echo

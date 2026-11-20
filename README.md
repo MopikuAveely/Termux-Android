@@ -1,5 +1,3 @@
-# 🛠 "REPOSITORY STILL IN PROGRESS"
-
 # Termux-Android
 
 Termux is a Linux terminal environment, you can connect server via SSH, programing using Nano, Vim, and any terminal-based apps.
@@ -125,4 +123,4 @@ Don't run multiple desktop launchers at the same time, it's just like 'killx11' 
 ---
 <br>
 
-# 4🛠
+# 4🛠 "REPOSITORY STILL IN PROGRESS"

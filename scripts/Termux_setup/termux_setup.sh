@@ -249,7 +249,7 @@ if [ ! -d ~/storage ]; then
 fi
 
 echo
-echo -e "\e[0;32mTermux setup was completed!\e[0m"
+echo -e "\e[0;32mSetup was completed!\e[0m"
 echo -e "\e[0;32mPlease login-out and login-in to apply the change.\e[0m"
 echo -e "\e[0;32m(Press: CTRL + D)\e[0m"
 

@@ -26,4 +26,8 @@ virgl_test_server_android &
 # Export display with GPU acceleration on port: 0 and launch DBus
 export GALLIUM_DRIVER=virpipe MESA_GL_VERSION_OVERRIDE=4.0 DISPLAY=:0 && dbus-launch &
 
+# Auto start apps
+thunar
+xfce4-terminal
+
 exit 0

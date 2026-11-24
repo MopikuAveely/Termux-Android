@@ -51,7 +51,6 @@ PACKAGES=(
   dialog
   vlc-qt
   firefox
-  ristretto
   xfce4-taskmanager
   vim
   vulkan-loader
@@ -93,6 +92,7 @@ show_menu() {
             clear
             PACKAGES=(
               xfce4
+			  ristretto
             )
             script1="https://raw.githubusercontent.com/MopikuAveely/Termux-Android/refs/heads/main/scripts/Termux_setup/startxfce4_termux.sh"
             script2="startxfce4_termux.sh"

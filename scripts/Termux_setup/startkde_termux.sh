@@ -28,4 +28,9 @@ export 'PULSE_SERVER=127.0.0.1'
 env DISPLAY=:0 GALLIUM_DRIVER=virpipe MESA_GL_VERSION_OVERRIDE=4.0 dbus-launch --exit-with-session startplasma-x11 > /dev/null 2>&1
 clear
 
+# If user log-out, force-close server and Termux-X11 application on Android
+pkill -f termux-x11
+am force-stop com.termux.x11 > /dev/null 2>&1
+clear
+
 exit 0

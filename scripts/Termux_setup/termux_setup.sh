@@ -248,7 +248,7 @@ if [ ! -d ~/storage ]; then
   echo
   echo -e "\e[0;33mTHIS IS OPTIONAL.\e[0m"
   echo -e "\e[0;32mIf you want to link your device storage, please give the app permission to access your file.\e[0m"
-  echo -e "\e[0;32mYou can setup it anytime with executing: 'termux-setup-storage'.\e[0m"
+  echo -e "\e[0;32mYou can setup it anytime with executing: 'termux-setup-storage'\e[0m"
   echo
   read -p "Link your device storage? (y/N): " -n 1 -r
   if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -257,7 +257,7 @@ if [ ! -d ~/storage ]; then
     termux-setup-storage
     else
       echo
-      echo "Skipped"
+      echo "Skipped."
     fi
 fi
 

@@ -81,6 +81,7 @@ mkdir -p ~/.scripts/
 show_menu() {
     CHOICE=$(dialog --clear \
                 --title "SELECT YOUR DESKTOP ENVIRONMENT" \
+				--no-cancel \
                 --menu "It's touch screen, or you can use arrow bottons on your external key bar to select. Enter to confirm." \
                 11 45 2 \
                 1 "XFCE4" \
@@ -111,16 +112,6 @@ show_menu() {
             script2="startkde_termux.sh"
             ln -sf ~/.scripts/startkde_termux.sh ~/.D
             ;;
-		*)
-		    clear
-			echo "No DE selected."
-			PACKAGES=(
-			  thunar
-			  xfce4-terminal
-			)
-			script1="https://raw.githubusercontent.com/MopikuAveely/Termux-Android/refs/heads/main/scripts/Termux_setup/start_blankdesk.sh"
-			script2="start_blankdesk.sh"
-			
     esac
 }
 
@@ -210,7 +201,6 @@ echo 'Modifying file .bashrc and creating .bash_profile...'
 # .bashrc
 cat << 'EOF' > ~/.bashrc
 # Script shortcuts.
-alias blankD="~/.scripts/start_blankdesk.sh &"
 alias xfceD="~/.scripts/startxfce4_termux.sh &"
 alias kdeD="~/.scripts/startkde_termux.sh &"
 
@@ -220,26 +210,25 @@ alias killx11='echo "Killing Xorg11..." && kill -9 $(pgrep -f "termux.x11") 2>/d
 EOF
 
 # .bash_profile
-if [ ! -f ~/.scripts/start_blankdesk.sh ]; then
-  cat << 'EOF' > ~/.bash_profile
-  # Login desktop confirmation.
-  echo
-  read -p "Login desktop? (y/N): " -n 1 -r
-  if [[ $REPLY =~ ^[Yy]$ ]]
-  then
-      clear
-      echo "Entering desktop mode..."
-      if [ -f ~/.D ]; then
-        ~/.D
-      fi
-  fi
-  clear
+cat << 'EOF' > ~/.bash_profile
+# Login desktop confirmation.
+echo
+read -p "Login desktop? (y/N): " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    clear
+    echo "Entering desktop mode..."
+    if [ -f ~/.D ]; then
+      ~/.D
+    fi
+fi
+clear
 
-  # Calling .bashrc if the file exists.
-  if [ -f ~/.bashrc ]
-  then
-      source ~/.bashrc
-  fi
+# Calling .bashrc if the file exists.
+if [ -f ~/.bashrc ]
+then
+    source ~/.bashrc
+fi
 EOF
 fi
 

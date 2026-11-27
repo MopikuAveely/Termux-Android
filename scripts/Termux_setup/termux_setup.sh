@@ -230,7 +230,6 @@ then
     source ~/.bashrc
 fi
 EOF
-fi
 
 # Setup storage.
 if [ ! -d ~/storage ]; then
